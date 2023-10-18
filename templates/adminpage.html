@@ -64,8 +64,8 @@
   </head>
   <body>
     <div class="container">
-      <h1>Admin Page</h1>
-      <h2>
+      <h1 class="text-center">Admin Page</h1>
+      <div class="text-center">
         <span
           style="
             color: rgb(255, 255, 255);
@@ -76,13 +76,14 @@
           "
           >Admin@gmail.com</span
         >
-      </h2>
+      </div>
+      <br />
+      <div class="text-center">
+        <a href="/logout" class="btn btn-primary">
+          <button class="btn btn-primary">Log Out</button>
+        </a>
+      </div>
 
-      <a href="/logout">
-        <button style="margin-left: 1000px" class="btn btn-primary">
-          Log Out
-        </button>
-      </a>
       <form action="/admin" method="POST">
         <div class="form-group">
           <label for="email">Enter Employee Email</label>
@@ -106,7 +107,7 @@
         <br />
         <button type="submit" class="btn btn-primary">Assign Task</button>
       </form>
-      <h2 class="mt-4">All User Task Data</h2>
+      <h2 class="mt-4">Project assined to employee</h2>
       <table class="table table-striped">
         <thead>
           <tr>

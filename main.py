@@ -138,7 +138,8 @@ def adminpage():
         db.commit()
         
         return redirect('/get_all_data');
-    
+
+# Create project
 @app.route('/get_all_data')
 def get_all_data():
     db = get_db()
@@ -165,6 +166,7 @@ def mark_task_completed(taskid):
 
     return redirect('/user')
 
+# log-out
 @app.route('/logout')
 def logout():
     return redirect('/')
