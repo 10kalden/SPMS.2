@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .container-bg {
+        background-image: url(https://static.vecteezy.com/system/resources/previews/012/852/477/original/business-meeting-2d-isolated-illustration-coworkers-discussion-flat-characters-on-cartoon-background-collective-work-cooperation-colourful-editable-scene-for-mobile-website-presentation-vector.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+      }
+
+      .card {
+        margin-top: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-bg">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title text-center">Sign Up</h2>
+                <p>{{msg}}</p>
+                <form action="/signup" method="post">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      placeholder="Enter name"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="Enter email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      placeholder="Enter password"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpassword" class="form-label"
+                      >Confirm Password:</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="cpassword"
+                      name="cpassword"
+                      placeholder="Enter confirm password"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <div class="text-center mb-4">
+                  Already have an account
+                  <a
+                    href="/templates/login.html"
+                    style="color: red; text-decoration: none"
+                    >Log-in!</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

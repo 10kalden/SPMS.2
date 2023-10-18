@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f7f7f7;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+      }
+      h1 {
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+      h2 {
+        color: #007bff;
+        margin-top: 20px;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+      .table {
+        background-color: #fff;
+      }
+      .table th {
+        background-color: #007bff;
+        color: #fff;
+      }
+      .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2;
+      }
+      .completed {
+        background-color: #28a745;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .pending {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      form {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Admin Page</h1>
+      <h2>
+        <span
+          style="
+            color: rgb(255, 255, 255);
+            border: 2px solid rgb(99, 149, 214);
+            background-color: rgb(99, 149, 214);
+            border-radius: 10px;
+            padding: 10px;
+          "
+          >Admin@gmail.com</span
+        >
+      </h2>
+
+      <a href="/logout">
+        <button style="margin-left: 1000px" class="btn btn-primary">
+          Log Out
+        </button>
+      </a>
+      <form action="/admin" method="POST">
+        <div class="form-group">
+          <label for="email">Enter Employee Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Enter task"
+          />
+          <br />
+        </div>
+        <div class="form-group">
+          <label for="task">Enter Project</label>
+          <input
+            type="text"
+            class="form-control"
+            name="task"
+            placeholder="Enter task"
+          />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Assign Task</button>
+      </form>
+      <h2 class="mt-4">All User Task Data</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>Task</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+          <tr>
+            <td>{{ row.taskid }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.task }}</td>
+            <td>
+              {% if row.task_completed %}
+              <span class="completed">Completed</span>
+              {% else %}
+              <span class="pending">Pending</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
